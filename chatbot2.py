@@ -14,9 +14,11 @@ with open("intents.json") as file:
     data = json.load(file)
 
 try:
+    #if the trained model already exists, load the model
     with open("data.pickle", "rb") as f:
         words, labels, training, output = pickle.load(f)
 except:
+    #if model doesnt exists, prepare the model and train
     words = []
     labels = []
     docs_x = []
@@ -78,7 +80,7 @@ model = tflearn.DNN(net)
 try:
     model.load('model.tflearn')
 except:
-
+    
     # tensorflow.compat.v1.reset_default_graph()
     # net = tflearn.input_data(shape=[None, len(training[0])])
     # net = tflearn.fully_connected(net, 8)
