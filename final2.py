@@ -246,7 +246,7 @@ while True:
 
 
         if test_model.speaker_var in list_req_pp:
-            print('correct')
+            print('correct') # if the speaker is detected, starts recording audio and convert it to text
 
 
             def audio_to_text():
@@ -297,7 +297,7 @@ while True:
 
 
             audio_to_text()
-
+#audio to text converter
             sound = f"C:\\Users\\Rohit\\Dropbox\\My PC (DESKTOP-BV3E4EV)\\Desktop\\spec_rec3\\text_audio\\{audio_to_text.file_name}"
 
             r = sr.Recognizer()
