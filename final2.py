@@ -243,6 +243,7 @@ while True:
         test_model()
     elif (choice==5):
         chat()
+        #calls the chatbot for basic instructions and how to use it 
 
 
         if test_model.speaker_var in list_req_pp:
@@ -311,9 +312,13 @@ while True:
 #sumariser
                 try:
                     text = str(r.recognize_google(audio))
+                    #gives the user the choice what kind of summarisation he wants to apply
+                    ##summarising based on frequency of words 
+                    ##summarisation into required number of lines
+                    ##giving only key lines and core message of the speech
                     choice = int(input("1)trim according frequecy\n2)summarise to required number of lines\n3)summarise to core message"))
 
-                    if choice==1:##FREQUENCY
+                    if choice==1:
                         stopwords = list(STOP_WORDS)
                         nlp = spacy.load('en_core_web_sm')
                         doc = nlp(text)
